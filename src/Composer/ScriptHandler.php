@@ -9,7 +9,7 @@ use Symfony\Component\Finder\Finder;
 class ScriptHandler
 {
     const SWAGGER_UI_DIST_DIR = 'swagger-api/swagger-ui/dist';
-    const BUNDLE_PUBLIC_DIR = 'harmbandstra/swagger-ui-bundle/src/Resources/public';
+    const BUNDLE_PUBLIC_DIR = 'hypecodeteam/swagger-ui-bundle/src/Resources/public';
 
     public static function linkAssets(Event $event): void
     {
