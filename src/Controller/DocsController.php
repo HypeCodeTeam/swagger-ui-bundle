@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace HarmBandstra\SwaggerUiBundle\Controller;
+namespace HypeCodeTeam\SwaggerUiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Exception\FileNotFoundException;
@@ -85,14 +85,14 @@ class DocsController extends AbstractController
         if ($this->configFile !== $fileName) {
             if ($fileName !== '' && !in_array($fileName, $this->swaggerFiles)) {
                 throw new \RuntimeException(
-                    sprintf('File [%s] not defined under [hb_swagger_ui.files] in config.yml.', $fileName)
+                    sprintf('File [%s] not defined under [hct_swagger_ui.files] in config.yml.', $fileName)
                 );
             }
         }
 
         if ($this->directory === '') {
             throw new \RuntimeException(
-                'Directory [hb_swagger_ui.directory] not defined or empty in config.yml.'
+                'Directory [hct_swagger_ui.directory] not defined or empty in config.yml.'
             );
         }
 
@@ -112,7 +112,7 @@ class DocsController extends AbstractController
             $specUrl = $fileName;
         } else {
             $specUrl = $this->generateUrl(
-                'hb_swagger_ui_swagger_file',
+                'hct_swagger_ui_swagger_file',
                 ['fileName' => $fileName],
                 UrlGeneratorInterface::ABSOLUTE_PATH
             );
@@ -121,12 +121,12 @@ class DocsController extends AbstractController
         $parameters = ['url' => $specUrl];
         if ($this->configFile) {
             $parameters['configUrl'] = $this->generateUrl(
-                'hb_swagger_ui_swagger_file',
+                'hct_swagger_ui_swagger_file',
                 ['fileName' => $this->configFile],
                 UrlGeneratorInterface::ABSOLUTE_PATH
             );
         }
 
-        return $this->generateUrl('hb_swagger_ui_default', $parameters);
+        return $this->generateUrl('hct_swagger_ui_default', $parameters);
     }
 }

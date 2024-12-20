@@ -5,7 +5,7 @@
   "keywords": [
     "php", "symfony", "swagger-ui", "openapi" ,"api", "doc", "bundle", "swagger"
   ],
-  "homepage": "https://github.com/harmbandstra/swagger-ui-bundle",
+  "homepage": "https://github.com/hypecodeteam/swagger-ui-bundle",
   "license": "GPL-3.0-or-later",
   "require": {
     "php": "^7.4 || ^8.0",
@@ -26,12 +26,12 @@
   },
   "autoload": {
     "psr-4": {
-      "HarmBandstra\\SwaggerUiBundle\\": "src"
+      "HypeCodeTeam\\SwaggerUiBundle\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "HarmBandstra\\SwaggerUiBundle\\Tests\\": "tests/"
+      "HypeCodeTeam\\SwaggerUiBundle\\Tests\\": "tests/"
     }
   },
   "include-path": [

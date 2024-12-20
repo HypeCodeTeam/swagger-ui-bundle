@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace HarmBandstra\SwaggerUiBundle\Tests\Composer;
+namespace HypeCodeTeam\SwaggerUiBundle\Tests\Composer;
 
 use Composer\Composer;
 use Composer\Config;
 use Composer\IO\IOInterface;
 use Composer\Script\Event;
-use HarmBandstra\SwaggerUiBundle\Composer\ScriptHandler;
+use HypeCodeTeam\SwaggerUiBundle\Composer\ScriptHandler;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Prophecy\Prophet;
@@ -58,6 +58,6 @@ class ScriptHandlerTest extends TestCase
         $this->prophet->checkPredictions();
 
         $filesystem = new Filesystem();
-        $filesystem->remove(sprintf('%s/../../vendor/harmbandstra', __DIR__));
+        $filesystem->remove(sprintf('%s/../../vendor/hypecodeteam', __DIR__));
     }
 }

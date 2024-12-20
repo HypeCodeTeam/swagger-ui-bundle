@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace HarmBandstra\SwaggerUiBundle\Composer;
+namespace HypeCodeTeam\SwaggerUiBundle\Composer;
 
 use Composer\Script\Event;
 use Symfony\Component\Filesystem\Filesystem;

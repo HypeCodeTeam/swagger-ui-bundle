@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace HarmBandstra\SwaggerUiBundle\DependencyInjection;
+namespace HypeCodeTeam\SwaggerUiBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -13,10 +13,10 @@ class HBSwaggerUiExtension extends Extension
     {
         $config = $this->processConfiguration(new Configuration(), $configs);
 
-        $container->setParameter('hb_swagger_ui.directory', $config['directory']);
-        $container->setParameter('hb_swagger_ui.files', $config['files']);
-        $container->setParameter('hb_swagger_ui.assetUrlPath', $config['assetUrlPath']);
-        $container->setParameter('hb_swagger_ui.configFile', $config['configFile']);
+        $container->setParameter('hct_swagger_ui.directory', $config['directory']);
+        $container->setParameter('hct_swagger_ui.files', $config['files']);
+        $container->setParameter('hct_swagger_ui.assetUrlPath', $config['assetUrlPath']);
+        $container->setParameter('hct_swagger_ui.configFile', $config['configFile']);
 
         $loader = new YamlFileLoader(
             $container,

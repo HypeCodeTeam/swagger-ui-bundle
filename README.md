@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/harmbandstra/swagger-ui-bundle.svg?branch=master)](https://travis-ci.com/harmbandstra/swagger-ui-bundle)
-[![Code Coverage](https://scrutinizer-ci.com/g/harmbandstra/swagger-ui-bundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/harmbandstra/swagger-ui-bundle/?branch=master)
+[![Build Status](https://travis-ci.com/hypecodeteam/swagger-ui-bundle.svg?branch=master)](https://travis-ci.com/hypecodeteam/swagger-ui-bundle)
+[![Code Coverage](https://scrutinizer-ci.com/g/hypecodeteam/swagger-ui-bundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/hypecodeteam/swagger-ui-bundle/?branch=master)
 
 # Swagger UI Bundle
 
@@ -23,15 +23,15 @@ After installation and configuration, just start your local webserver, and navig
 
 Install with composer in dev environment:
 
-`$ composer require harmbandstra/swagger-ui-bundle --dev`
+`$ composer require hypecodeteam/swagger-ui-bundle --dev`
 
-Make sure swagger-ui assets are copied to `web/bundles` by adding the [`HarmBandstra\SwaggerUiBundle\Composer\ScriptHandler::linkAssets`](src/Composer/ScriptHandler#L13) composer hook **before** the [`Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::installAssets`](https://github.com/sensiolabs/SensioDistributionBundle/blob/master/Composer/ScriptHandler.php#L158) hook in your `composer.json`.
+Make sure swagger-ui assets are copied to `web/bundles` by adding the [`HypeCodeTeam\SwaggerUiBundle\Composer\ScriptHandler::linkAssets`](src/Composer/ScriptHandler#L13) composer hook **before** the [`Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::installAssets`](https://github.com/sensiolabs/SensioDistributionBundle/blob/master/Composer/ScriptHandler.php#L158) hook in your `composer.json`.
 
 ```json
 {
   "scripts": {
     "symfony-scripts": [
-        "HarmBandstra\\SwaggerUiBundle\\Composer\\ScriptHandler::linkAssets",
+        "HypeCodeTeam\\SwaggerUiBundle\\Composer\\ScriptHandler::linkAssets",
         "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
     ],
     "post-install-cmd": ["@symfony-scripts"],
@@ -63,11 +63,11 @@ Add the composer hook like this:
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "HarmBandstra\\SwaggerUiBundle\\Composer\\ScriptHandler::linkAssets",
+            "HypeCodeTeam\\SwaggerUiBundle\\Composer\\ScriptHandler::linkAssets",
             "@auto-scripts"
         ],
         "post-update-cmd": [
-            "HarmBandstra\\SwaggerUiBundle\\Composer\\ScriptHandler::linkAssets",
+            "HypeCodeTeam\\SwaggerUiBundle\\Composer\\ScriptHandler::linkAssets",
             "@auto-scripts"
         ]
     },
@@ -86,7 +86,7 @@ class AppKernel extends Kernel
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             // ...
-            $bundles[] = new HarmBandstra\SwaggerUiBundle\HBSwaggerUiBundle();
+            $bundles[] = new HypeCodeTeam\SwaggerUiBundle\HBSwaggerUiBundle();
         }
 
         // ...
@@ -100,7 +100,7 @@ Enable bundle in `config/bundles.php`(Symfony 4):
 
 return [
     // ...
-    HarmBandstra\SwaggerUiBundle\HBSwaggerUiBundle::class => ['dev' => true]
+    HypeCodeTeam\SwaggerUiBundle\HBSwaggerUiBundle::class => ['dev' => true]
 ];
 ```
 Add the route where swagger-ui will be available in `routing_dev.yml`:
@@ -121,7 +121,7 @@ Under `files` you specify which files should be exposed.
 The first file in the array is the default one and it will be the file the `/docs` endpoint will redirect to. For this file you have the option to specify an absolute path to the .json spec file ("/_swagger/swagger.json") or a URL ("https://example.com/swagger.json").
 
 ```yaml
-hb_swagger_ui:
+hct_swagger_ui:
   directory: "%kernel.root_dir%/../docs/"
   files:
     - "/_swagger/swagger.json"
@@ -132,17 +132,17 @@ hb_swagger_ui:
 Optional: If you want to have a default configuration in place for Swagger UI, place a `config.json` in the same directory as the swagger files, and add it to the configuration. It will be loaded automatically by appending it as the query parameter `configUrl`.
 
 ```yaml
-hb_swagger_ui:
+hct_swagger_ui:
   configFile: "config.json"
 ```
 
 Optional: If you serve your project from a different directory than the vhost root, you can overwrite the asset URL path with the `assetUrlPath` configuration. Be sure to add a leading and trailing slash.
 
 ```yaml
-hb_swagger_ui:
+hct_swagger_ui:
   assetUrlPath: '/my-vhost-sub-directory/bundles/hbswaggerui/'
 ```
 
 ## Configuration (Symfony 4, 5 and 6)
 
-Create a file `hb_swagger_ui.yaml` `in config/packages`. Follow the rest of the steps for configuration in Symfony 3.
+Create a file `hct_swagger_ui.yaml` `in config/packages`. Follow the rest of the steps for configuration in Symfony 3.

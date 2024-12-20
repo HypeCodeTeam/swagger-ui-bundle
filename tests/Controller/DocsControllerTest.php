@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace HarmBandstra\SwaggerUiBundle\Tests\Controller;
+namespace HypeCodeTeam\SwaggerUiBundle\Tests\Controller;
 
-use HarmBandstra\SwaggerUiBundle\Controller\DocsController;
+use HypeCodeTeam\SwaggerUiBundle\Controller\DocsController;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Yaml\Yaml;
@@ -97,7 +97,7 @@ class DocsControllerTest extends WebTestCase
 
         $this->assertEquals(Response::HTTP_NOT_FOUND, $response->getStatusCode());
         $this->assertEquals(
-            '"File [invalid.yaml] not defined under [hb_swagger_ui.files] in config.yml."',
+            '"File [invalid.yaml] not defined under [hct_swagger_ui.files] in config.yml."',
             $response->getContent()
         );
     }
@@ -138,7 +138,7 @@ class DocsControllerTest extends WebTestCase
 
         $this->assertEquals(Response::HTTP_NOT_FOUND, $response->getStatusCode());
         $this->assertEquals(
-            '"File [config.json] not defined under [hb_swagger_ui.files] in config.yml."',
+            '"File [config.json] not defined under [hct_swagger_ui.files] in config.yml."',
             $response->getContent()
         );
     }

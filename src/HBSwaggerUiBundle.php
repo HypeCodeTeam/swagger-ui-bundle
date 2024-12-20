@@ -1,6 +1,6 @@
 <?php
 
-namespace HarmBandstra\SwaggerUiBundle;
+namespace HypeCodeTeam\SwaggerUiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

@@ -1,11 +1,11 @@
 services:
-  HarmBandstra\SwaggerUiBundle\Controller\DocsController:
+  HypeCodeTeam\SwaggerUiBundle\Controller\DocsController:
     autowire: true
     autoconfigure: true
     public: true
     tags: ['controller.service_arguments']
     bind:
-      $swaggerFiles: '%hb_swagger_ui.files%'
-      $directory: '%hb_swagger_ui.directory%'
-      $assetUrlPath: '%hb_swagger_ui.assetUrlPath%'
-      $configFile: '%hb_swagger_ui.configFile%'
+      $swaggerFiles: '%hct_swagger_ui.files%'
+      $directory: '%hct_swagger_ui.directory%'
+      $assetUrlPath: '%hct_swagger_ui.assetUrlPath%'
+      $configFile: '%hct_swagger_ui.configFile%'

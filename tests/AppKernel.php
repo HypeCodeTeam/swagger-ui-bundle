@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace HarmBandstra\SwaggerUiBundle\Tests;
+namespace HypeCodeTeam\SwaggerUiBundle\Tests;
 
-use HarmBandstra\SwaggerUiBundle\HBSwaggerUiBundle;
+use HypeCodeTeam\SwaggerUiBundle\HBSwaggerUiBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
