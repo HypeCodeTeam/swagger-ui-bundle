@@ -3,6 +3,5 @@
 /var/
 /vendor/
 composer.lock
-/src/Resources/public/*
-!/src/Resources/public/.gitkeep
+!/src/Resources/public/swagger-initializer.js.dist
 .phpunit.result.cache
