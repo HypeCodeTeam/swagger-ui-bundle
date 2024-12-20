@@ -8,8 +8,10 @@ use Symfony\Component\Finder\Finder;
 
 class ScriptHandler
 {
-    const SWAGGER_UI_DIST_DIR = 'swagger-api/swagger-ui/dist';
-    const BUNDLE_PUBLIC_DIR = 'hypecodeteam/swagger-ui-bundle/src/Resources/public';
+    private const SWAGGER_UI_DIST_DIR = 'swagger-api/swagger-ui/dist';
+    private const BUNDLE_PUBLIC_DIR = 'hypecodeteam/swagger-ui-bundle/src/Resources/public';
+    private const SWAGGER_INITIALIZER_JS_FILENAME_DIST = 'swagger-initializer.js.dist';
+    private const SWAGGER_INITIALIZER_JS_FILENAME = 'swagger-initializer.js';
 
     public static function linkAssets(Event $event): void
     {
@@ -23,7 +25,18 @@ class ScriptHandler
         $filesIterator->files()->in($source)->notName('*.map');
 
         $filesystem->mirror($source, $target, $filesIterator, ['override' => true]);
+        self::overrideSwaggerInitializerJs($target);
 
-        $event->getIO()->write('Linked SwaggerUI assets.');
+        $event->getIO()->write('Linked + override SwaggerUI assets.');
+    }
+
+    private static function overrideSwaggerInitializerJs(string $targetDir): void
+    {
+        $targetFile = sprintf('%s/%s', $targetDir, self::SWAGGER_INITIALIZER_JS_FILENAME);
+        unlink($targetFile);
+        copy(
+            sprintf('%s/%s', $targetDir, self::SWAGGER_INITIALIZER_JS_FILENAME_DIST),
+            $targetFile
+        );
     }
 }

@@ -1,5 +1,5 @@
 {
-    "name": "hypecodeteam/swagger-ui-bundle",
+  "name": "hypecodeteam/swagger-ui-bundle",
   "type": "symfony-bundle",
   "description": "Exposes swagger UI inside your Symfony project through a route (eg. /docs)",
   "keywords": [
