@@ -2,7 +2,7 @@
 
 namespace HypeCodeTeam\SwaggerUiBundle\Tests;
 
-use HypeCodeTeam\SwaggerUiBundle\HBSwaggerUiBundle;
+use HypeCodeTeam\SwaggerUiBundle\HCTSwaggerUiBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
@@ -15,7 +15,7 @@ class AppKernel extends Kernel
 
         if (in_array($this->getEnvironment(), array('test'))) {
             $bundles[] = new FrameworkBundle();
-            $bundles[] = new HBSwaggerUiBundle();
+            $bundles[] = new HCTSwaggerUiBundle();
         }
 
         return $bundles;

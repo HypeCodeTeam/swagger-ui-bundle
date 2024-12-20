@@ -5,10 +5,10 @@ namespace HypeCodeTeam\SwaggerUiBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * HBSwaggerUiBundle
+ * HCTSwaggerUiBundle
  *
  * @author Harm Bandstra <hbandstra@gmail.com>
  */
-class HBSwaggerUiBundle extends Bundle
+class HCTSwaggerUiBundle extends Bundle
 {
 }

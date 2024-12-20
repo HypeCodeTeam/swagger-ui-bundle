@@ -86,7 +86,7 @@ class AppKernel extends Kernel
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             // ...
-            $bundles[] = new HypeCodeTeam\SwaggerUiBundle\HBSwaggerUiBundle();
+            $bundles[] = new HypeCodeTeam\SwaggerUiBundle\HCTSwaggerUiBundle();
         }
 
         // ...
@@ -100,14 +100,14 @@ Enable bundle in `config/bundles.php`(Symfony 4):
 
 return [
     // ...
-    HypeCodeTeam\SwaggerUiBundle\HBSwaggerUiBundle::class => ['dev' => true]
+    HypeCodeTeam\SwaggerUiBundle\HCTSwaggerUiBundle::class => ['dev' => true]
 ];
 ```
 Add the route where swagger-ui will be available in `routing_dev.yml`:
 
 ```yml
 _swagger-ui:
-    resource: '@HBSwaggerUiBundle/Resources/config/routing.yml'
+    resource: '@HCTSwaggerUiBundle/Resources/config/routing.yml'
     prefix: /docs
 ```
 
