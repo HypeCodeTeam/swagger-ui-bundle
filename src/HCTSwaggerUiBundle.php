@@ -7,7 +7,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * HCTSwaggerUiBundle
  *
- * @author Harm Bandstra <hbandstra@gmail.com>
+ * @author Harm Bandstra <hctandstra@gmail.com>
  */
 class HCTSwaggerUiBundle extends Bundle
 {

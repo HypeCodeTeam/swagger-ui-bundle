@@ -140,7 +140,7 @@ Optional: If you serve your project from a different directory than the vhost ro
 
 ```yaml
 hct_swagger_ui:
-  assetUrlPath: '/my-vhost-sub-directory/bundles/hbswaggerui/'
+  assetUrlPath: '/my-vhost-sub-directory/bundles/hctswaggerui/'
 ```
 
 ## Configuration (Symfony 4, 5 and 6)
