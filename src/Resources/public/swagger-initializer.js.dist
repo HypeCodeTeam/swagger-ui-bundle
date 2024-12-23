@@ -2,13 +2,12 @@ window.onload = function() {
   //<editor-fold desc="Changeable Configuration Block">
 
   const urlParams = new URLSearchParams(window.location.search);
-  let queryUrl = urlParams.get('url');
-  queryUrl = (queryUrl !== null) ? queryUrl : 'https://petstore.swagger.io/v2/swagger.json';
-
+  const queryUrl = urlParams.get('url');
+  const url = (null !== queryUrl) ? queryUrl : 'https://petstore.swagger.io/v2/swagger.json';
 
   // the following lines will be replaced by docker/configurator, when it runs in a docker-container
   window.ui = SwaggerUIBundle({
-    url: queryUrl,
+    url: url,
     dom_id: '#swagger-ui',
     deepLinking: true,
     presets: [
